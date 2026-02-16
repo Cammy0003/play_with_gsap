@@ -1,0 +1,9 @@
+:root {
+  --color-surface: black;
+  --color-text: #f5f5f5;
+  --color-accent: #fde047;
+  --radius-lg: 12px;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --spacing-lg: 24px;
+  --hover-color: blue;
+}

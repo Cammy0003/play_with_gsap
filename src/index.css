@@ -1,0 +1,9 @@
+@import "./styles/variables.css"; /* Make variables globally accessible */
+
+body {
+  margin: 0;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
