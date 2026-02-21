@@ -1,7 +1,9 @@
-// import gsap from 'gsap';
-// import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+//import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
 import React from 'react';
 import Card from './components/Card.tsx';
+import {useGSAP} from "@gsap/react";
 
 {/*
 TODO
@@ -12,13 +14,46 @@ TODO
 
 
 const ExplodingMenu: React.FC = () => {
+    const container = useRef<HTMLDivElement>(null);
+    // console.log("This is ", typeof Card)
+    const cards = ["Physics", "Math", "Philosophy", "Art", "Code"];
+
+    const containerStyle: React.CSSProperties = {
+        position: 'relative',
+        width: '100%',
+        height: '600px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+
+    useGSAP(() => {
+       gsap.to(".custom-card", {
+           x: () => (Math.random() - 0.5) * window.innerWidth * 0.8,
+           y: () => (Math.random() - 0.5) * window.innerWidth * 0.8,
+           rotation: () => (Math.random() - 0.5) * 180,
+
+          duration: 1.5,
+          ease: "expo.out",
+          stagger: 0.05,
+
+          force3D: true,
+       });
+    }, { scope: container });
+
+
     return (
-        <div>
-            <Card title="Project Alpha" borderColor="blue">
-                <p>This card contains standard text elements.</p>
-            </Card>
+        <div
+            ref={container}
+            style={containerStyle}
+        >
+            {cards.map((text, i) => (
+                <Card key={i} title={text}>
+                    <p>Level {i + 1} Expertise</p>
+                </Card>
+            ))}
         </div>
-    )
-}
+    );
+};
 
 export default ExplodingMenu;
