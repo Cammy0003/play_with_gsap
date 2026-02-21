@@ -31,8 +31,11 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
             display: 'flex',
             flexDirection: 'column',
             boxSizing: 'border-box',   // Critical: includes border/padding in dimensions
+            alignItems: 'center',       // Center items horizontally (X-axis)
+            justifyContent: 'center',  // Center items vertically (Y-axis)
+            textAlign: 'center',
 
-            willChange: 'tranform, opacity', // Hint to the browser for GPU optimization
+            willChange: 'transform, opacity', // Hint to the browser for GPU optimization
             ...style, // Merge external styles
         };
 
@@ -42,7 +45,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
                 style={cardStyle}
                 className={`custom-card shadow-xl ${className}`}
             >
-                {title && <h2 style={cardStyle}>{title}</h2> }
+                {title && <h2 style={{ margin: '0 0 10px 0', fontSize: '1.5rem' }}>{title}</h2> }
                 <div className="card-content" style={{ flex: 1, overflow: 'hidden' }}>
                     {children}
                 </div>

@@ -9,7 +9,6 @@ const MainLayout = () => {
         {/* This is where Home, About, or Learn pages will appear */}
         <Outlet />
       </main>
-      <footer>© 2026 Cameron Physics</footer>
     </div>
   );
 };
