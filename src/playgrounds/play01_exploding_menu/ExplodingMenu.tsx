@@ -24,7 +24,6 @@ const ExplodingMenu: React.FC = () => {
         justifyContent: 'center',
         alignItems: 'center',
         overflow: 'hidden',
-
     }
 
     useGSAP(() => {

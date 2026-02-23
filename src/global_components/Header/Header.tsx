@@ -1,6 +1,7 @@
 import styles from './Header.module.css';
 import React from 'react'
 import { PATHS } from '../../routes/paths'
+import logoStyles from '../../styles/logo.module.css';
 
 const Header: React.FC = () => {
   const navLinks = [
@@ -14,8 +15,8 @@ const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         {/* Logo / Brand */}
-        <div className={styles.logo}>
-          <span className={styles.logoText}>PLAYGROUND</span>
+        <div className={logoStyles.logo}>
+          <span className={logoStyles.logoText}>PLAYGROUND</span>
         </div>
 
         {/* Navigation */}
