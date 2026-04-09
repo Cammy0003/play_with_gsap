@@ -2,6 +2,7 @@
 export const PATHS = {
   HOME: '/',
   EXPLODING_MENU: '/exploding-menu',
+  SCAN_LINE_LOADER: '/scan_line_loader_page',
   RESEARCH: '/research',
   ABOUT: '/about',
 } as const;
@@ -9,6 +10,7 @@ export const PATHS = {
 export const NAV_LINKS = [
   { name: 'Home', path: PATHS.HOME },
   { name: 'The Exploding Menu', path: PATHS.EXPLODING_MENU },
+  { name: 'Scan Lines', path: PATHS.SCAN_LINE_LOADER },
   { name: 'Research', path: PATHS.RESEARCH },
   { name: 'About', path: PATHS.ABOUT },
 ] as const;

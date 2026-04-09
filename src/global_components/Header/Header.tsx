@@ -1,15 +1,9 @@
 import styles from './Header.module.css';
 import React from 'react'
-import { PATHS } from '../../routes/paths'
+import { NAV_LINKS } from '../../routes/paths'
 import logoStyles from '../../styles/logo.module.css';
 
 const Header: React.FC = () => {
-  const navLinks = [
-    { name: 'Home', href: PATHS.HOME },
-    { name: 'The-Exploding-Menu', href: PATHS.EXPLODING_MENU },
-    { name: 'Research', href: '#' },
-    { name: 'About', href: '#' },
-  ] as const;
 
   return (
     <header className={styles.header}>
@@ -22,9 +16,9 @@ const Header: React.FC = () => {
         {/* Navigation */}
         <nav>
           <ul className={styles.navList}>
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <li key={link.name}>
-                <a href={link.href} className={styles.navLink}>
+                <a href={link.path} className={styles.navLink}>
                   {link.name}
                 </a>
               </li>
